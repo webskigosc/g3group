@@ -1,0 +1,52 @@
+services:
+  web:
+    image: php:8.2-apache
+    container_name: ${PREFIX_NAME}-web
+    build:
+      context: .
+      dockerfile: Dockerfile
+    platform: linux/arm64
+    ports:
+      - '80:80'
+    volumes:
+      - ./public:/var/www/html
+      - ./src:/var/www/src
+    networks:
+      - g3net
+
+  db:
+    image: mariadb:latest
+    container_name: ${PREFIX_NAME}-db
+    platform: linux/arm64
+    environment:
+      MARIADB_ROOT_PASSWORD: ${DB_ROOT_PASS}
+      MARIADB_DATABASE: ${DB_NAME}
+      MARIADB_USER: ${DB_USER}
+      MARIADB_PASSWORD: ${DB_PASS}
+    volumes:
+      - ./db_data:/var/lib/mysql
+      - ./database/init.sql:/docker-entrypoint-initdb.d/1.sql
+      - ./database/demo_data.sql:/docker-entrypoint-initdb.d/2.sql
+    ports:
+      - '3307:3306'
+    networks:
+      - g3net
+
+  pma:
+    image: phpmyadmin
+    container_name: ${PREFIX_NAME}-pma
+    platform: linux/arm64
+    depends_on:
+      - db
+    environment:
+      PMA_HOST: db
+    ports:
+      - 8080:80
+    networks:
+      - g3net
+
+volumes:
+  db_data:
+
+networks:
+  g3net:

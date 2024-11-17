@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="pl">
+
+<head>
+  <meta charset="UTF-8" />
+  <title>Licznik</title>
+  <meta name="title" content="Licznik" />
+  <meta name="description" content="Licznik z zadania G3 Group" />
+  <meta name="author" content="Marcin Lewandowski" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.4.1/dist/css/bootstrap.min.css"
+    integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous">
+</head>
+
+<body style="padding-top: 70px;">
+  <nav class="navbar navbar-default navbar-fixed-top">
+    <div class="container">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar"
+          aria-expanded="false" aria-controls="navbar">
+          <span class="sr-only">Rozwiń menu</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="#">G3</a>
+      </div>
+      <div id="navbar" class="navbar-collapse collapse">
+        <ul class="nav navbar-nav navbar-right">
+          <li><a href="index.html">Formularz</a></li>
+          <li class="active"><a href="counter.html">Licznik</a></li>
+          <li><a href="table.html">Tabela</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-8 col-md-6 col-sm-push-3">
+        <h1 class="text-center page-header h2">Licznik</h1>
+        <div class="text-center">
+          <div id="counterDisplay" class="well well-lg h3">-</div>
+          <form id="counterForm" class="form-inline" role="search">
+            <div class="form-group">
+              <select name="type" class="form-control">
+                <option value="first_name">Imię</option>
+                <option value="last_name">Nazwisko</option>
+                <option value="email">Adres e-mail</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <input type="text" name="phrase" minlength="2" maxlength="254" class="form-control"
+                placeholder="Podaj frazę" aria-label="Policz">
+            </div>
+            <button type="submit" class="btn btn-default">Policz</button>
+          </form>
+        </div>
+      </div>
+    </div>
+    <hr />
+    <div class="row">
+      <div class="col-md-6 text-center">
+        <b>Liczba rekordów dla nazwiska Kowalski</b>
+        <div id="counterLastName" class="label label-default">0</div>
+      </div>
+      <div class="col-md-6 text-center">
+        <b>Liczba rekordów dla emaila w domenie gmail.com</b>
+        <div id="counterEmailDomain" class="label label-default">0</div>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.0.0/dist/jquery.min.js"
+    integrity="sha256-JmvOoLtYsmqlsWxa7mDSLMwa6dZ9rrIdtrrVYRnDRH0=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.21.0/dist/jquery.validate.min.js"
+    integrity="sha256-umbTaFxP31Fv6O1itpLS/3+v5fOAWDLOUzlmvOGaKV4=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@3.4.1/dist/js/bootstrap.min.js"
+    integrity="sha384-aJ21OjlMXNL5UyIl/XNwTMqvzeRMZH2w8c5cRVpzpU8Y5bApTppSuUkhZXN0VxHd"
+    crossorigin="anonymous"></script>
+  <script src="js/records.js?v=1.0.0"></script>
+</body>
+
+</html>

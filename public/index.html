@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="pl">
+
+<head>
+  <meta charset="UTF-8" />
+  <title>Formularz</title>
+  <meta name="title" content="Formularz" />
+  <meta name="description" content="Formularz z zadania G3 Group" />
+  <meta name="author" content="Marcin Lewandowski" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.4.1/dist/css/bootstrap.min.css"
+    integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous">
+</head>
+
+<body style="padding-top: 70px;">
+  <nav class="navbar navbar-default navbar-fixed-top">
+    <div class="container">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar"
+          aria-expanded="false" aria-controls="navbar">
+          <span class="sr-only">Rozwiń menu</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="#">G3</a>
+      </div>
+      <div id="navbar" class="navbar-collapse collapse">
+        <ul class="nav navbar-nav navbar-right">
+          <li class="active"><a href="index.html">Formularz</a></li>
+          <li><a href="counter.html">Licznik</a></li>
+          <li><a href="table.html">Tabela</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  <div class="container">
+    <div id="alert" class="alert alert-dismissible hide" role="alert">
+      <span class="alert-text"></span>
+      <button type="button" class="close" data-dismiss="alert" aria-label="Zamknij powiadomienie">
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+    <form id="clientForm" action="ajax-handler.php?action=submit_form" method="post" aria-label="Formularz">
+      <div class="form-body">
+        <div class="row">
+          <div class="col-md-12 text-center">
+            <h1 class="text-center page-header h2">Formularz</h1>
+          </div>
+          <div class="col-md-6">
+            <div class="form-group">
+              <label for="firstName" class="col-sm-12 control-label">Imię</label>
+              <input type="text" class="form-control" id="firstName" name="firstname" minlength="2" maxlength="50"
+                placeholder="Janusz" pattern="[\-A-Za-zżźćńółęąśŻŹĆĄŚĘŁÓŃ ]{2,255}" required />
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="form-group">
+              <label for="lastName" class="col-sm-12 control-label">Nazwisko</label>
+              <input type="text" class="form-control" id="lastName" name="lastname" minlength="2" maxlength="50"
+                placeholder="Kowalski" pattern="[\-A-Za-zżźćńółęąśŻŹĆĄŚĘŁÓŃ ]{2,255}" />
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-6">
+            <div class="form-group">
+              <label for="emailAddress" class="col-sm-12 control-label">Adres e-mail</label>
+              <input type="email" class="form-control" id="emailAddress" name="email" minlength="6" maxlentgh="254"
+                placeholder="janusz.kowalski@wp.pl" pattern="^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,10}$"
+                required />
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="form-group">
+              <label for="phoneNumber" class="col-sm-12 control-label">Numer telefonu</label>
+              <div class="input-group">
+                <span class="input-group-addon">+48</span>
+                <input type="text" class="form-control" id="phoneNumber" name="phone" minlength="9" maxlength="11"
+                  placeholder="500 100 900" pattern="[0-9]{3} [0-9]{3} [0-9]{3}" />
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-6">
+            <div class="form-group">
+              <label for="clientNumber" class="col-sm-12 control-label">Numer klienta</label>
+              <input type="text" class="form-control" id="clientNumber" name="client" maxlength="12"
+                placeholder="000123-ABCDE" pattern="[0-9]{6}-[A-Z]{5}" required />
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-xs-6">
+            <div class="radio-inline">
+              <label for="chooseOne" class="customcheck">
+                <input type="radio" id="chooseOne" name="choose" value="1" required>
+                Wybór 1
+              </label>
+            </div>
+          </div>
+          <div class="col-xs-6">
+            <div class="radio-inline">
+              <label for="chooseTwo" class="customcheck">
+                <input type="radio" id="chooseTwo" name="choose" value="2" required>
+                Wybór 2
+              </label>
+            </div>
+          </div>
+        </div>
+        <div class="row hide">
+          <div class="col-md-6">
+            <div class="form-group">
+              <label for="bankAccount" class="col-sm-12 control-label">Numer konta</label>
+              <div class="input-group">
+                <span class="input-group-addon">PL</span>
+                <input type="text" class="form-control" id="bankAccount" name="account" minlength="26" maxlength="32"
+                  placeholder="00 0000 0000 0000 0000 0000 0000"
+                  pattern="[0-9]{2} [0-9]{4} [0-9]{4} [0-9]{4} [0-9]{4}" />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-12">
+          <div class="checkbox">
+            <label for="agreementGdpr" class="customcheck">
+              <input type="checkbox" id="agreementGdpr" name="agreementgdpr" value="1" required>
+              Oświadczenie 1
+            </label>
+          </div>
+          <div class="checkbox">
+            <label for="agreementTerms" class="customcheck">
+              <input type="checkbox" id="agreementTerms" name="agreementterms" value="1" required>
+              Oświadczenie 2
+            </label>
+          </div>
+          <div class="checkbox">
+            <label for="agreementAds" class="customcheck">
+              <input type="checkbox" id="agreementAds" name="agreementads" value="1">
+              Zgoda 1 (opcjonalna)
+            </label>
+          </div>
+
+        </div>
+        <div class="col-md-12 text-right">
+          <button type="submit" class="btn btn-primary btn-md" id="submitClientForm"
+            data-loading-text="Wysyłanie...">Wyślij</button>
+        </div>
+      </div>
+    </form>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.0.0/dist/jquery.min.js"
+    integrity="sha256-JmvOoLtYsmqlsWxa7mDSLMwa6dZ9rrIdtrrVYRnDRH0=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.21.0/dist/jquery.validate.min.js"
+    integrity="sha256-umbTaFxP31Fv6O1itpLS/3+v5fOAWDLOUzlmvOGaKV4=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@3.4.1/dist/js/bootstrap.min.js"
+    integrity="sha384-aJ21OjlMXNL5UyIl/XNwTMqvzeRMZH2w8c5cRVpzpU8Y5bApTppSuUkhZXN0VxHd"
+    crossorigin="anonymous"></script>
+  <script src="js/form.js?v=1.0.0"></script>
+</body>
+
+</html>

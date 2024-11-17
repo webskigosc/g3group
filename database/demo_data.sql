@@ -1,0 +1,16 @@
+  INSERT INTO client (first_name, last_name, email, phone, choose, bank_account, client_no, agreement_gdpr, agreement_terms, agreement_ads) VALUES
+    ('Abbe', 'Moulsdall', 'amoulsdall0@nba.com', '+48 819 142 671', 1, 'PL45 1090 2402 4299 5162 9967 9942', '000013-SPACE', 1, 1, 0),
+    ('Ian', 'Pott', 'ipott1@elpais.com', '+48 418 576 217', 1, 'PL89 1090 2402 9527 4576 7124 6267', '000007-JBOND', 1, 1, 0),
+    ('Clementina', 'Clitherow', 'cclitherow2@abc.net.au', '+48 870 638 570', 1, 'PL89 1090 2402 1514 9471 2732 5815', '000102-RRUDY', 1, 1, 0),
+    ('Dell', 'Kowalski', 'dmechell3@homestead.com', '+48 133 258 625', 2, '', '000238-MNDOO', 1, 1, 0),
+    ('Doralynne', 'Andriesse', 'dandriesse4@google.es', '+48 281 759 424', 2, '', '000812-BCXYY', 1, 1, 0),
+    ('Devinne', 'Justis', 'djustis5@dropbox.com', '+48 359 679 821', 2, '', '000951-DFGHJ', 1, 1, 0),
+    ('Ammamaria', 'Extance', 'aextance6@state.gov', '+48 194 835 362', 2, '', '000654-QWERT', 1, 1, 1),
+    ('Ware', 'Kowalski', 'wbreese7@nyu.edu', '+48 185 973 141', 2, '', '000275-ZXCVB', 1, 1, 0),
+    ('Marybeth', 'Sallier', 'msallier8@oracle.com', '+48 276 676 757', 2, '', '000432-NHYTR', 1, 1, 0),
+    ('Elie', 'Antonietti', 'eantonietti9@gmail.com', '+48 724 191 196', 2, '', '000843-ASDFG', 1, 1, 0),
+    ('Deloris', 'Vasenin', 'dvasenina@rakuten.co.jp', '+48 184 966 460', 2, '', '000594-MNBVC', 1, 1, 0),
+    ('Abrahan', 'Harpin', 'aharpinb@wiley.com', '+48 163 779 480', 2, '', '000765-RTYUI', 1, 1, 0),
+    ('Marla', 'Robjant', 'mrobjantc@gmail.com', '+48 135 515 191', 2, '', '000918-XCVBN', 1, 1, 1),
+    ('Tull', 'Upwood', 'tupwoodd@cdbaby.com', '+48 164 162 423', 2, '', '000219-QWERT', 1, 1, 1),
+    ('Stanislaus', 'Simister', 'ssimistere@gmail.gov', '+48 681 658 686', 2, '', '000426-ASDFG', 1, 1, 1);
